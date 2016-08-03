@@ -1,0 +1,9 @@
+http://docs.spring.io/spring-webflow/docs/current/reference/html/spring-faces.html
+http://blog.caelum.com.br/spring-javaee-jsf/
+http://www.tutorialspoint.com/jsf/jsf_spring_integration.htm
+http://www.simpledev.com.br/jsf2-spring.html
+http://blog.camilolopes.com.br/serie-spring-aplicacao-jee-com-jsf-2-0-spring-3-0/
+
+
+http://www.javabeat.net/primefaces-spring-hibernate-integration-example/
+http://www.concretepage.com/spring-4/spring-4-security-jsf-2-primefaces-5-integration-annotation-example

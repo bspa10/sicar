@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.com.bsparaujo.sicar</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>2.0.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-releasetrain</artifactId>
+                <version>Hopper-SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <properties>
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <!--             Test APIs             -->
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <dependency.dbunit.version>2.5.2</dependency.dbunit.version>
+        <dependency.hsqldb.version>2.3.3</dependency.hsqldb.version>
+        <dependency.spring-test-dbunit.version>1.3.0</dependency.spring-test-dbunit.version>
+
+        <!-- Codificação de caractere do projeto -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Versão do Java utilizada para compilação -->
+        <project.build.javaVersion>1.8</project.build.javaVersion>
+
+        <!-- Versão dos plugins utilizados -->
+        <project.build.plugin.antrun>1.7</project.build.plugin.antrun>
+        <project.build.plugin.assembly>2.4</project.build.plugin.assembly>
+        <project.build.plugin.build-helper>1.11</project.build.plugin.build-helper>
+        <project.build.plugin.clean>3.0.0</project.build.plugin.clean>
+        <project.build.plugin.compiler>3.5.1</project.build.plugin.compiler>
+        <project.build.plugin.dependency>2.10</project.build.plugin.dependency>
+        <project.build.plugin.deploy>2.8.2</project.build.plugin.deploy>
+        <project.build.plugin.enforcer>1.4.1</project.build.plugin.enforcer>
+        <project.build.plugin.failsafe>2.19.1</project.build.plugin.failsafe>
+        <project.build.plugin.surefire>2.19.1</project.build.plugin.surefire>
+        <project.build.plugin.project-info>2.8.1</project.build.plugin.project-info>
+        <project.build.plugin.surefire-report>2.19</project.build.plugin.surefire-report>
+        <project.build.plugin.cobertura>2.7</project.build.plugin.cobertura>
+        <project.build.plugin.install>2.5.1</project.build.plugin.install>
+        <project.build.plugin.jar>3.0.2</project.build.plugin.jar>
+        <project.build.plugin.resources>3.0.1</project.build.plugin.resources>
+        <project.build.plugin.source>3.0.1</project.build.plugin.source>
+        <project.build.plugin.site>3.3</project.build.plugin.site>
+        <project.build.plugin.war>2.6</project.build.plugin.war>
+        <project.build.plugin.sonar>2.6</project.build.plugin.sonar>
+    </properties>
+
+
+    <dependencies>
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <!--              Core API             -->
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-instrument</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <!--             Util APIs             -->
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <!--            Logging APIs           -->
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <!--             Test APIs             -->
+        <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Configuração de versão dos plugins comuns, ordenados alfabeticamente -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${project.build.plugin.build-helper}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>${project.build.plugin.antrun}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${project.build.plugin.assembly}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${project.build.plugin.clean}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${project.build.plugin.compiler}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${project.build.plugin.dependency}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${project.build.plugin.deploy}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${project.build.plugin.enforcer}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${project.build.plugin.failsafe}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${project.build.plugin.install}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${project.build.plugin.jar}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${project.build.plugin.resources}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${project.build.plugin.source}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${project.build.plugin.surefire}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>${project.build.plugin.project-info}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>${project.build.plugin.surefire-report}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>cobertura-maven-plugin</artifactId>
+                    <version>${project.build.plugin.cobertura}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${project.build.plugin.site}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${project.build.plugin.war}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${project.build.plugin.sonar}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <!-- Altera a codificação de caractere dos arquivos fontes -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <!-- Configura a versão do JAVA a ser utilizado na compilação -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${project.build.javaVersion}</source>
+                    <target>${project.build.javaVersion}</target>
+                </configuration>
+            </plugin>
+            <!-- Anexa o código fonte do projeto junto ao binário no repositório -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Plugin para 'forçar' configurações no projeto -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>validar-regras-pom</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <!-- Verifica que os plugins incluído no POM tem um número de versão -->
+                                <requirePluginVersions>
+                                    <message>Todo plugin deve ter o número de versão explicito!</message>
+                                </requirePluginVersions>
+                            </rules>
+                            <fail>true</fail>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Plugin para incluir um novo diretório de teste -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-integration-test-sources</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/integration/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-integration-test-resources</id>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>add-test-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <filtering>true</filtering>
+                                    <directory>src/integration/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Configuração do javaagent -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>-javaagent:${user.home}/.m2/repository/org/springframework/spring-instrument/4.2.5.RELEASE/spring-instrument-4.2.5.RELEASE.jar</argLine>
+                </configuration>
+                <executions>
+                </executions>
+            </plugin>
+            <!-- Execução dos testes unitários  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <!-- Configura a execução dos testes de integração -->
+                    <execution>
+                        <id>integration-test</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
