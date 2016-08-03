@@ -1,4 +1,4 @@
-package br.com.bsparaujo.sicar.datatype;
+package br.com.bsparaujo.datatype;
 
 import javax.swing.text.MaskFormatter;
 import java.text.ParseException;

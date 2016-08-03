@@ -1,4 +1,4 @@
-package br.com.bsparaujo.sicar.datatype;
+package br.com.bsparaujo.datatype;
 
 public final class NomeException extends DatatypeException {
     NomeException(String message) {
