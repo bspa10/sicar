@@ -10,6 +10,7 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <modules>
+        <module>../parent</module>
         <module>../datatype</module>
         <module>../dm-familia</module>
         <module>../dm-financas</module>
