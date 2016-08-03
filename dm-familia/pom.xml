@@ -12,4 +12,12 @@
     </parent>
 
     <artifactId>dm-familia</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>br.com.bsparaujo.sicar</groupId>
+            <artifactId>dm-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -15,9 +15,21 @@
 
     <dependencies>
         <dependency>
+            <groupId>br.com.bsparaujo</groupId>
+            <artifactId>datatype</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.bsparaujo.framework</groupId>
+            <artifactId>ddd</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>br.com.bsparaujo.sicar</groupId>
             <artifactId>sicar-core</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

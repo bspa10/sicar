@@ -11,5 +11,6 @@
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
+    <groupId>br.com.bsparaujo</groupId>
     <artifactId>datatype</artifactId>
 </project>
