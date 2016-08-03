@@ -13,6 +13,7 @@
         <module>../parent</module>
         <module>../ddd</module>
         <module>../datatype</module>
+        <module>../sicar-core</module>
         <module>../dm-core</module>
         <module>../dm-familia</module>
         <module>../dm-financas</module>
