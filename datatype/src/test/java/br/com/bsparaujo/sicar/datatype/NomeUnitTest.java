@@ -9,9 +9,9 @@ public class NomeUnitTest {
     public void criar_nome_correto() {
         final Nome nome = Nome.newNome("José", "from Dual");
 
-        Assert.assertEquals("José", nome.primeiro());
-        Assert.assertEquals("from Dual", nome.sobrenome());
-        Assert.assertEquals("José from Dual", nome.completo());
+        Assert.assertEquals("José", nome.getPrimeiro());
+        Assert.assertEquals("from Dual", nome.getSobrenome());
+        Assert.assertEquals("José from Dual", nome.getCompleto());
     }
 
     @Test(expected = NomeException.class)

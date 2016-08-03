@@ -7,10 +7,9 @@ import lombok.Getter;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Year;
-import java.util.Objects;
 
-@Getter(AccessLevel.PUBLIC)
 @EqualsAndHashCode
+@Getter(AccessLevel.PUBLIC)
 public final class Periodo {
     private final Year ano;
     private final Month mes;

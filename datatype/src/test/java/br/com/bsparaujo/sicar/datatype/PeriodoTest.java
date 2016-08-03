@@ -19,16 +19,16 @@ public class PeriodoTest {
 
         final Periodo corrente = Periodo.corrente();
         Assert.assertNotNull(corrente);
-        Assert.assertEquals(ano, corrente.ano().getValue());
-        Assert.assertEquals(mes, corrente.mes().getValue());
+        Assert.assertEquals(ano, corrente.getAno().getValue());
+        Assert.assertEquals(mes, corrente.getMes().getValue());
         Assert.assertTrue(corrente.estaNoPresente());
         Assert.assertFalse(corrente.estaNoPassado());
         Assert.assertFalse(corrente.estaNoFuturo());
 
         final Periodo proximo = corrente.seguinte();
         Assert.assertNotNull(proximo);
-        Assert.assertEquals(mes == 12 ? ano + 1 : ano, proximo.ano().getValue());
-        Assert.assertEquals(mes == 12 ? 1 : mes + 1, proximo.mes().getValue());
+        Assert.assertEquals(mes == 12 ? ano + 1 : ano, proximo.getAno().getValue());
+        Assert.assertEquals(mes == 12 ? 1 : mes + 1, proximo.getMes().getValue());
         Assert.assertTrue(proximo.estaNoFuturo());
         Assert.assertFalse(proximo.estaNoPassado());
         Assert.assertFalse(proximo.estaNoPresente());
@@ -38,8 +38,8 @@ public class PeriodoTest {
 
         final Periodo anterior = corrente.anterior();
         Assert.assertNotNull(anterior);
-        Assert.assertEquals(mes == 1 ? ano - 1 : ano, anterior.ano().getValue());
-        Assert.assertEquals(mes == 1 ? 12 : mes - 1, anterior.mes().getValue());
+        Assert.assertEquals(mes == 1 ? ano - 1 : ano, anterior.getAno().getValue());
+        Assert.assertEquals(mes == 1 ? 12 : mes - 1, anterior.getMes().getValue());
         Assert.assertTrue(anterior.estaNoPassado());
         Assert.assertFalse(anterior.estaNoPresente());
         Assert.assertFalse(anterior.estaNoFuturo());
